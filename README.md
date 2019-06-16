@@ -22,10 +22,18 @@
 
 需要注意的是分母是选择`n`还是`n-1`，取决于你选取的数据是整个完整数据还是数据中的一部分
 
-### 1.1 Variance（标准差）
+### 1.2 Variance（方差）
 
 Variance is another measure of the spread of data in a data set. In fact it is almost identical to the standard deviation.（方差是数据集中数据分布的另一种度量。实际上，它几乎与标准差相同）
 
-标准差的数学表达公式如下：
+方差的数学表达公式如下：
 
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/3.PNG)
+
+### 1.3 Covariance（协方差）
+标准差与方差只针对一维数据进行衡量的指标，协方差是针对二维数据或者是更高维的数据进行的衡量指标，主要用来表示多维度与平均值的偏离程度。
+
+协方差的数学表达公式如下：
+
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/4.PNG)
+
