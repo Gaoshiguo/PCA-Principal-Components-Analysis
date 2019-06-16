@@ -1,2 +1,6 @@
 # PCA-Principal-Components-Analysis
-PCA is a useful statistical technique that has found application in fields such as face recognition and image compression, and is a common technique for finding patterns in data of high dimension
+# PCA是一项常用的在高维数据中寻找特征的降维技术，目前主要用于图片识别和图片压缩领域中。本文主要讲两个部分：
+
+# 一、PCA的算法原理。
+
+# 二、PCA的人脸识别算法
