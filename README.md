@@ -37,3 +37,15 @@ Variance is another measure of the spread of data in a data set. In fact it is a
 
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/4.PNG)
 
+### 1.2 The covariance Matrix（协方差矩阵）
+
+协方差矩阵主要是用于当数据的维度超过3或者更多的时候，我们可以通过一个矩阵来存储各个维度的协方差，这个矩阵就被称为“协方差矩阵”。
+
+用数学方法来表示一个N为数据的协方差矩阵可以表示为：
+
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/5.PNG)
+
+
+
+
+
