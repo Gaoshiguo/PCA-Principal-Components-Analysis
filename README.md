@@ -13,6 +13,11 @@
 
 
 ### 1.1 Standard Deviation（标准差）
-标准差就是用来描述一组数据与平均值得偏离程度，反映了一组数据的波动情况，数学表达公式如下：
+标准差就是用来描述一组数据与平均值得偏离程度，反映了一组数据的波动情况，平均值数学表达公式如下：
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/1.PNG)
 
+标准差的表达公式如下：
+
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/2.PNG)
+
+需要注意的是分母是选择`n`还是`n-1`，取决于你选取的数据是整个完整数据还是数据中的一部分
