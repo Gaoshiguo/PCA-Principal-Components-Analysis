@@ -70,5 +70,54 @@ y:(43,13,32,21,20)
 
 通常我们还需要对特征向量进行标准化处理，即求模长，然后将向量中每一个元素除以该模长，即为标准化处理。
 
+我们使用python来计算这样一个二维数据的协方差矩阵以及该协方差矩阵的特征值和特征向量，作为我们学习的一个简单的例子
+
+数据如下：
+
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/7.PNG)
+
+首先计算x维和y维的平均值，代码如下：
+```
+x=[2.5,0.5,2.2,1.9,3.1,2.3,2,1,1.5,1.1]
+y=[2.4,0.7,2.9,2.2,3.0,2.7,1.6,1.1,1.6,0.9]
+means_X=round(float(sum(x)/(len(x))),4)
+means_Y=round(float(sum(y)/(len(y))),4)
+print("x 维的平均值为：",means_X)
+print("y 维的平均值为：",means_Y)
+
+```
+用初始数据中x维和y维的每一个数字减去平均值，得到
+然后计算协方差：
+```
+update_x=[]
+update_y=[]
+for i in range(0,len(x)):
+    var=x[i]-means_X
+    update_x.append(var)
+    i=i+1
+print(update_x)
+for i in range(0,len(x)):
+    var=y[i]-means_Y
+    update_y.append(var)
+    i=i+1
+print(update_y)
+#将两个数组纵向合并
+c=np.vstack((update_x,update_y))
+print(c)
+#调用numpy包计算协方差
+cov_c=np.cov(c)
+cov_st=np.array(cov_c)
+print(type(cov_st))
+```
+再计算相应的特征值和特征向量：
+
+```
+A,B=np.linalg.eig(cov_st)
+print("该协方差矩阵的特征值为：",A)
+print("该协方差矩阵的特征向量为：",B)
+```
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/8.PNG)
+
+
 
 
