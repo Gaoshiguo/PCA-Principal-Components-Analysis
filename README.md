@@ -45,7 +45,17 @@ Variance is another measure of the spread of data in a data set. In fact it is a
 
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/5.PNG)
 
+现在假设我们有一个三个维度的数据，使用一个协方差矩阵将这三维数据的协方差表示如下：
 
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/6.PNG)
 
+设置小练习如下：
+
+请计算一下两个数据的协方差矩阵：
+x:(10,39,19,23,28)
+y:(43,13,32,21,20)
+以及x:(1，-1,4) y:(2,1,3) z:(1,3,-1,)
+
+请计算这两个数据的协方差矩阵
 
 
