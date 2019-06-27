@@ -37,7 +37,7 @@ Variance is another measure of the spread of data in a data set. In fact it is a
 
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/4.PNG)
 
-### 1.2 The covariance Matrix（协方差矩阵）
+### 1.4 The covariance Matrix（协方差矩阵）
 
 协方差矩阵主要是用于当数据的维度超过3或者更多的时候，我们可以通过一个矩阵来存储各个维度的协方差，这个矩阵就被称为“协方差矩阵”。
 
@@ -58,7 +58,7 @@ y:(43,13,32,21,20)
 
 请计算这两个数据的协方差矩阵
 
-### 1.3 Eigenvectors（特征向量）
+### 1.5 Eigenvectors（特征向量）
 
 在矩阵论中，我们可以这样去理解特征值和特征向量，一个矩阵由一个变换到另一个矩阵，Aα=λα，其中α称为矩阵A 的一个特征向量，λ称为矩阵A的一个特征值。特征向量确定了矩阵变换的方向，特征值确定了矩阵变换的比例。
 
@@ -120,6 +120,6 @@ print("该协方差矩阵的特征向量为：",B)
 
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/8.PNG)
 
-
+### 1.6 Eigenvectors（特征向量）
 
 
