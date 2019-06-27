@@ -74,7 +74,7 @@ y:(43,13,32,21,20)
 
 数据如下：
 
-![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/7.PNG)
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/7.png)
 
 首先计算x维和y维的平均值，代码如下：
 ```
@@ -118,7 +118,7 @@ print("该协方差矩阵的特征向量为：",B)
 ```
 代码运行结果如下图所示：
 
-![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/8.PNG)
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/8.png)
 
 ### 1.6 Choosing components and forming a feature vector（选择主成分并生成特征向量）
 
