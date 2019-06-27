@@ -116,6 +116,8 @@ A,B=np.linalg.eig(cov_st)
 print("该协方差矩阵的特征值为：",A)
 print("该协方差矩阵的特征向量为：",B)
 ```
+代码运行结果如下图所示：
+
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/8.PNG)
 
 
