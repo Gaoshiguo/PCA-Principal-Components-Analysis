@@ -120,6 +120,10 @@ print("该协方差矩阵的特征向量为：",B)
 
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/8.PNG)
 
-### 1.6 Eigenvectors（特征向量）
+### 1.6 Choosing components and forming a feature vector（选择主成分并生成特征向量）
+
+一个协方差矩阵有着不同的特征值与特征向量，事实上最高特征值的对应的特征向量就是这个数据集的主成分。
+
+通常来说，一旦协方差矩阵的特征值和特征向量被计算出来了之后，就是按照特征值的大小从高到低依次排列。特征值的大小确定了主成分的重要性。
 
 
