@@ -134,3 +134,8 @@ print("该协方差矩阵的特征向量为：",B)
 计算新生成的数据集的公式如下：
 
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/9.PNG)
+
+其中rowFeatureVector是由模式矢量作为列组成的矩阵的转置，因此它的行就是原来的模式矢量，而且对应最大特征值的特征矢量在该矩阵的最上一行。rowdataAdjust是每一维数据减去均值后，所组成矩阵的转置，即数据项目在每一列中，每一行是一维，对我们的样本来说即是，第一行为x维上数据，第二行为y维上的数据
+
+正是由于特征向量是两两正交的，那么我们就可以使用任何的特征向量来将原始数据变换到正交的这些坐标轴上。
+
