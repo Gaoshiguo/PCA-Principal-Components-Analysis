@@ -130,3 +130,7 @@ print("该协方差矩阵的特征向量为：",B)
 你得到了N个特征值和与这些特征值相对应的特征向量。然后在主成分分析时，你选取了前P个较大的特征值，如此一来，就将原来N维的数据降维到只有P维。这样就起到了降维的效果了。*
 
 ### 1.7 Deriving the new data set（选择特征向量生成新的数据集【这个新的数据集也就是降维后的数据集】）
+
+计算新生成的数据集的公式如下：
+
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/9.PNG)
