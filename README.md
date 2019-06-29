@@ -258,3 +258,9 @@ def PCA(data, r):#参数r代表降低到r维
 最终训练得到的结果如下：
 
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/12.png)
+
+为了对比实验，我们分别选取5张、7张、9张，还是降低到10维进行对比实验：
+
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/13.png)
+
+可以看出来随着训练集的图片选取的不断增多，训练准确率在不断增加。这是因为训练的样本多了，但是我们如果选择全部的10张图片作为训练样本的话就会导致训练结果过拟合。
