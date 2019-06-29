@@ -151,9 +151,9 @@ print("该协方差矩阵的特征向量为：",B)
 
 下载后的数据集是这个样子的：
 
-![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/10.PNG)
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/10.png)
 
-![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/11.PNG)
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/11.png)
 
 该数据集表示的是一共有40个人的人脸图像，其中每一个人有10张人脸图像。相应的PGM文件为说明。
 
