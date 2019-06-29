@@ -200,3 +200,58 @@ def load_orl(k):#参数K代表选择K张图片作为训练图片使用
 
     return train_face, train_label, test_face, test_label
    ```
+前期将所有训练图片矢量化之后，开始进行PCA算法的降维操作
+```python
+def PCA(data, r):
+    data = np.float32(np.mat(data))
+    rows, cols = np.shape(data)
+    data_mean = np.mean(data, 0)  # 对列求平均值
+    A = data - np.tile(data_mean, (rows, 1))  # 将所有样例减去对应均值得到A
+    C = A * A.T  # 得到协方差矩阵
+    D, V = np.linalg.eig(C)  # 求协方差矩阵的特征值和特征向量
+    V_r = V[:, 0:r]  # 按列取前r个特征向量
+    V_r = A.T * V_r  # 小矩阵特征向量向大矩阵特征向量过渡
+    for i in range(r):
+        V_r[:, i] = V_r[:, i] / np.linalg.norm(V_r[:, i])  # 特征向量归一化
+
+    final_data = A * V_r
+    return final_data, data_mean, V_r
+  ```
+  
+  最后我们进行初次训练，随机选取每个人物的五张图片作为训练图片使用。将降低的维数设定为10维，查看一下训练效果如何。
+  ```python
+  def face_recongize():
+    #对每一个人随机选取5张照片作为训练数据
+    train_face, train_label, test_face, test_label = load_orl(5)
+
+    x_value = []
+    y_value = []
+    #将图片降维到10维
+    data_train_new, data_mean, V_r = PCA(train_face, 10)
+    num_train = data_train_new.shape[0]  # 训练脸总数
+    num_test = test_face.shape[0]  # 测试脸总数
+    temp_face = test_face - np.tile(data_mean, (num_test, 1))
+    data_test_new = temp_face * V_r  # 得到测试脸在特征向量下的数据
+    data_test_new = np.array(data_test_new)  # mat change to array
+    data_train_new = np.array(data_train_new)
+
+    true_num = 0
+    for i in range(num_test):
+        testFace = data_test_new[i, :]
+        diffMat = data_train_new - np.tile(testFace, (num_train, 1))  # 训练数据与测试脸之间距离
+        sqDiffMat = diffMat ** 2
+        sqDistances = sqDiffMat.sum(axis=1)  # 按行求和
+        sortedDistIndicies = sqDistances.argsort()  # 对向量从小到大排序，使用的是索引值,得到一个向量
+        indexMin = sortedDistIndicies[0]  # 距离最近的索引
+        if train_label[indexMin] == test_label[i]:
+            true_num += 1
+        else:
+            pass
+
+    accuracy = float(true_num) / num_test
+    x_value.append(5)
+    y_value.append(round(accuracy, 2))
+
+    print('当对每个人随机选择%d张照片降低至%d维进行训练时，The classify accuracy is: %.2f%%' % (5,10, accuracy * 100))
+
+```
