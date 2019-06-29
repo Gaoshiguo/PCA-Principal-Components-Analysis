@@ -148,3 +148,12 @@ print("该协方差矩阵的特征向量为：",B)
 ## 一、数据集的说明及相关函数的实现
 
 我们使用的是ORL官方数据集，可以从一下网址下载到[ORL下载链接](http://www.cl.cam.ac.uk/Research/DTG/attarchive/pub/data/att_faces.tar.Z)
+
+下载后的数据集是这个样子的：
+
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/10.PNG)
+
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/11.PNG)
+
+该数据集表示的是一共有40个人的人脸图像，其中每一个人有10张人脸图像。相应的PGM文件为说明。
+
