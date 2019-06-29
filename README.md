@@ -165,8 +165,38 @@ print("该协方差矩阵的特征向量为：",B)
 def img2vector(image):
     img = cv2.imread(image, 0)  # 读取图片
     rows, cols = img.shape  #获取图片的像素
-    imgVector = np.zeros((1, rows * cols))
-    imgVector = np.reshape(img, (1, rows * cols))#使用imgVector变量作为一个向量存储图片矢量化信息，初始值均设置为0
+    imgVector = np.zeros((1, rows * cols)) #初始值均设置为0，大小就是图片像素的大小
+    imgVector = np.reshape(img, (1, rows * cols))#使用imgVector变量作为一个向量存储图片矢量化信息
     return imgVector
  ```
+ 接下来定义一个函数用来选取训练图片，并对每张图片进行前面定义过的矢量化处理
+ 
+```python
+def load_orl(k):#参数K代表选择K张图片作为训练图片使用
+    '''
+    对训练数据集进行数组初始化，用0填充，每张图片尺寸都定为112*92,
+    现在共有40个人，每个人都选择k张，则整个训练集大小为40*k,112*92
+    '''
+    train_face = np.zeros((40 * k, 112 * 92))
+    train_label = np.zeros(40 * k)  # [0,0,.....0](共40*k个0)
+    test_face = np.zeros((40 * (10 - k), 112 * 92))
+    test_label = np.zeros(40 * (10 - k))
+    # sample=random.sample(range(10),k)#每个人都有的10张照片中，随机选取k张作为训练样本(10个里面随机选取K个成为一个列表)
+    sample = random.permutation(10) + 1  # 随机排序1-10 (0-9）+1
+    for i in range(40):  # 共有40个人
+        people_num = i + 1
+        for j in range(10):  # 每个人都有10张照片
+            image = orlpath + '/s' + str(people_num) + '/' + str(sample[j]) + '.jpg'
+            # 读取图片并进行矢量化
+            img = img2vector(image)
+            if j < k:
+                # 构成训练集
+                train_face[i * k + j, :] = img
+                train_label[i * k + j] = people_num
+            else:
+                # 构成测试集
+                test_face[i * (10 - k) + (j - k), :] = img
+                test_label[i * (10 - k) + (j - k)] = people_num
 
+    return train_face, train_label, test_face, test_label
+   ```
