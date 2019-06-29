@@ -270,3 +270,5 @@ def PCA(data, r):#参数r代表降低到r维
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/14.png)
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/15.png)
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/16.png)
+
+## 经过多次试验总结发现，训练样本越多训练效果越好，训练维数越高效果越好，但并不是绝对的，本次试验就发现，在选取的训练样本相同的情况下，降低至40维的效果反而不如降低至30维的效果
