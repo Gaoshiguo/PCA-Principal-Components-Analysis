@@ -157,3 +157,16 @@ print("该协方差矩阵的特征向量为：",B)
 
 该数据集表示的是一共有40个人的人脸图像，其中每一个人有10张人脸图像。相应的PGM文件为说明。
 
+我们需要用到的第三方包有numpy主要用于科学计算，cv主要用于图像处理，matplotlib主要用于训练结果展示
+
+首先定义一个函数用于将人脸图像矢量化为一个向量，向量的大小与图片的像素有关，代码如下：
+```python
+# 图片矢量化
+def img2vector(image):
+    img = cv2.imread(image, 0)  # 读取图片
+    rows, cols = img.shape  #获取图片的像素
+    imgVector = np.zeros((1, rows * cols))
+    imgVector = np.reshape(img, (1, rows * cols))#使用imgVector变量作为一个向量存储图片矢量化信息，初始值均设置为0
+    return imgVector
+ ```
+
