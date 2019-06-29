@@ -77,7 +77,7 @@ y:(43,13,32,21,20)
 ![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/7.png)
 
 首先计算x维和y维的平均值，代码如下：
-```
+```Python
 x=[2.5,0.5,2.2,1.9,3.1,2.3,2,1,1.5,1.1]
 y=[2.4,0.7,2.9,2.2,3.0,2.7,1.6,1.1,1.6,0.9]
 means_X=round(float(sum(x)/(len(x))),4)
@@ -88,7 +88,7 @@ print("y 维的平均值为：",means_Y)
 ```
 用初始数据中x维和y维的每一个数字减去平均值，得到
 然后计算协方差：
-```
+```python
 update_x=[]
 update_y=[]
 for i in range(0,len(x)):
@@ -112,9 +112,11 @@ print(type(cov_st))
 再计算相应的特征值和特征向量：
 
 ```python
+
 A,B=np.linalg.eig(cov_st)
 print("该协方差矩阵的特征值为：",A)
 print("该协方差矩阵的特征向量为：",B)
+
 ```
 代码运行结果如下图所示：
 
