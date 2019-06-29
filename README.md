@@ -202,7 +202,7 @@ def load_orl(k):#参数K代表选择K张图片作为训练图片使用
    ```
 前期将所有训练图片矢量化之后，开始进行PCA算法的降维操作
 ```python
-def PCA(data, r):
+def PCA(data, r):#参数r代表降低到r维
     data = np.float32(np.mat(data))
     rows, cols = np.shape(data)
     data_mean = np.mean(data, 0)  # 对列求平均值
@@ -222,7 +222,7 @@ def PCA(data, r):
   ```python
   def face_recongize():
     #对每一个人随机选取5张照片作为训练数据
-    train_face, train_label, test_face, test_label = load_orl(5)
+    train_face, train_label, test_face, test_label = load_orl(5)#随机选择每个人物的5张图片作为训练数据
 
     x_value = []
     y_value = []
@@ -255,3 +255,6 @@ def PCA(data, r):
     print('当对每个人随机选择%d张照片降低至%d维进行训练时，The classify accuracy is: %.2f%%' % (5,10, accuracy * 100))
 
 ```
+最终训练得到的结果如下：
+
+![image](https://github.com/Gaoshiguo/PCA-Principal-Components-Analysis/blob/master/image/12.png)
